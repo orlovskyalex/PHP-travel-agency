@@ -1,0 +1,24 @@
+.font-init(@font-path) {
+	src: url('@{font-path}.eot');
+	src: url('@{font-path}.eot?#iefix')format("embedded-opentype"),
+	url('@{font-path}.woff') format("woff"),
+	url('@{font-path}.ttf') format("truetype");
+	font-style: normal;
+}
+
+// Open Sans
+@font-face {
+	font-family: 'OpenSans';
+	.font-init('/images/fonts/OpenSans/OpenSansRegular/OpenSansRegular');
+	font-weight: 400;
+}
+@font-face {
+	font-family: 'OpenSans';
+	.font-init('/images/fonts/OpenSans/OpenSansSemiBold/OpenSansSemiBold');
+	font-weight: 700;
+}
+@font-face {
+	font-family: 'OpenSans';
+	.font-init('/images/fonts/OpenSans/OpenSansBold/OpenSansBold');
+	font-weight: 900;
+}
