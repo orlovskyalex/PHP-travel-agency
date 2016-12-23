@@ -4,7 +4,18 @@
 
 body {
 	background: url(../images/site/bg.jpg);
-	font: normal 16px @font-OpenSans;
+	color: @main-color;
+	font: normal 16px/16px @font-OpenSans;
+}
+
+button {
+	background: none;
+	border: 1px solid #d5d5d5;
+	border-radius: 3px;
+	cursor: pointer;
+	font: normal 1em @font-OpenSans;
+	margin: 0;
+	padding: 4px 8px;
 }
 
 header {
@@ -33,10 +44,42 @@ header {
 				margin: 0 10px;
 				padding: 10px;
 				.transition();
-				&:hover {
+				&:hover,
+				&.active {
 					background: @nav-hover;
+					color: @white;
 				}
 			}
 		}
+		.auth {
+			align-items: center;
+			display: flex;
+			margin-left: 50px;
+		}
+	}
+}
+
+#login-btn {
+	margin-right: 15px;
+	&::before {
+		color: @main-color;
+		content: '\f090';
+		font: normal 1em @font-FontAwesome;
+		margin-right: 5px;
+	}
+}
+
+#register-btn {
+	background: linear-gradient(@btn-lightgreen, @btn-green);
+	border-color: @btn-darkgreen;
+	color: @white;
+	margin-left: 15px;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, .15);
+	&::before {
+		color: @white;
+		content: '\f234';
+		font: normal 1em @font-FontAwesome;
+		margin-right: 5px;
+		text-shadow: 0 -1px 0 rgba(0, 0, 0, .15);
 	}
 }

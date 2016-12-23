@@ -17,6 +17,18 @@
 				<img src="/images/site/logo_header.png" alt="Hotels24 logo">
 			</a>
 			<?php include_once('/pages/menu.php'); ?>
+			<div class="auth">
+				<?php
+					if (!isset($_COOKIE['userid']))
+					{
+				?>
+				<button id="login-btn">Login</button>
+				or
+				<button id="register-btn">Register</button>
+				<?php
+					}
+				?>
+			</div>
 		</div>
 	</header>
 </body>
