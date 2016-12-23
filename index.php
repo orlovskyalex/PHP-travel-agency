@@ -22,9 +22,9 @@
 					if (!isset($_COOKIE['userid']))
 					{
 				?>
-				<button id="login-btn">Login</button>
+				<button id="signin-btn">Sign in</button>
 				or
-				<button id="register-btn">Register</button>
+				<button id="signup-btn">Sign up</button>
 				<?php
 					}
 				?>
