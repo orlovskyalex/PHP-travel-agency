@@ -11,7 +11,12 @@
 </head>
 
 <body>
-	
+	<header>
+		<a href="/" class="logo">
+			<img src="/images/site/logo_header.png" alt="Hotels24 logo">
+		</a>
+		<?php include_once('/pages/menu.php'); ?>
+	</header>
 </body>
 
 </html>
