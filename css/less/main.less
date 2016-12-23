@@ -11,7 +11,7 @@ body {
 button {
 	background: none;
 	border: 1px solid @btn-dark;
-	border-radius: 3px;
+	.border-radius();
 	color: @btn-dark;
 	cursor: pointer;
 	font: normal 1em @font-OpenSans;
@@ -41,7 +41,7 @@ header {
 			display: flex;
 			text-transform: uppercase;
 			li {
-				border-radius: 5px;
+				.border-radius(5px);
 				cursor: pointer;
 				margin: 0 10px;
 				padding: 10px;
