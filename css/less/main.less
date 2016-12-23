@@ -9,15 +9,25 @@ body {
 }
 
 button {
+	.border-radius();
+	.transition();
 	background: none;
 	border: 1px solid @btn-dark;
-	.border-radius();
 	color: @btn-dark;
 	cursor: pointer;
 	font: normal 1em @font-OpenSans;
 	margin: 0;
+	outline: none;
 	padding: 4px 8px;
 	white-space: nowrap;
+	&::before {
+		.transition();
+	}
+}
+
+input {
+	/* TODO outline-color based on validation result */
+	outline-color: @active-color;
 }
 
 header {
@@ -42,10 +52,10 @@ header {
 			text-transform: uppercase;
 			li {
 				.border-radius(5px);
+				.transition();
 				cursor: pointer;
 				margin: 0 10px;
 				padding: 10px;
-				.transition();
 				&:hover,
 				&.active {
 					background: @nav-hover;
@@ -57,19 +67,18 @@ header {
 			align-items: center;
 			display: flex;
 			margin-left: 50px;
+			position: relative;
 		}
 	}
 }
 
 #signin-btn {
 	margin-right: 15px;
-	.transition();
 	&::before {
 		color: @btn-dark;
 		content: '\f090';
 		font: normal 1em @font-FontAwesome;
 		margin-right: 5px;
-		.transition();
 	}
 	&:hover {
 		background: @btn-dark;
@@ -84,19 +93,70 @@ header {
 	border-color: @btn-green;
 	color: @btn-green;
 	margin-left: 15px;
-	.transition();
 	&::before {
 		color: @btn-green;
 		content: '\f234';
 		font: normal 1em @font-FontAwesome;
 		margin-right: 5px;
-		.transition();
 	}
 	&:hover {
 		background: @btn-green;
 		color: @white;
 		&::before {
 			color: @white;
+		}
+	}
+}
+
+.popup {
+	.border-radius();
+	.transition();
+	background: @white;
+	border: 1px solid @border-popup;
+	box-shadow: 0 3px 10px -1px @shadow-popup;
+	box-shadow: 0 3px 10px -1px @shadow-popup-rgba;
+	box-sizing: border-box;
+	opacity: 0;
+	padding: 20px;
+	position: absolute;
+	visibility: hidden;
+	&.active {
+		opacity: 1;
+		visibility: visible;
+	}
+	form {
+		input {
+			.border-radius();
+			background: @white;
+			border: 1px solid @border-input;
+			box-sizing: border-box;
+			display: block;
+			font: normal .875em @font-OpenSans;
+			margin-bottom: 20px;
+			padding: 5px 10px;
+			width: 100%;
+		}
+		button {
+			display: block;
+			margin: 0 auto;
+		}
+	}
+	&.user {
+		top: ~'calc(100% + 100px)';
+		width: 100%;
+		&.active {
+			top: ~'calc(100% + 50px)';
+		}
+		form {
+			button {
+				background: @btn-green;
+				border-color: @btn-green;
+				color: @white;
+				&:hover {
+					background: @btn-green-hover;
+					border-color: @btn-green-hover;
+				}
+			}
 		}
 	}
 }
