@@ -1,9 +1,9 @@
 <ul class="nav">
 	<li id="hotels-anchor">
-		Look for Hotel
+		Hotels
 	</li>
 	<li id="comments-anchor">
-		Read the comments
+		Comments
 	</li>
 <?php
 if ($_COOKIE['isadmin'] == '1')
