@@ -20,8 +20,43 @@ button {
 	outline: none;
 	padding: 4px 8px;
 	white-space: nowrap;
-	&::before {
+	&::before,
+	&::after {
 		.transition();
+		color: @main-color;
+		font: normal 1em @font-FontAwesome;
+	}
+	&::before {
+		margin-right: 5px;
+	}
+	&::after {
+		margin-left: 5px;
+	}
+	&:hover {
+		background: @btn-dark;
+		color: @white;
+		&::before,
+		&::after {
+			color: @white;
+		}
+	}
+	&.btn-success {
+		background: @btn-green;
+		border-color: @btn-green;
+		color: @white;
+		&:hover {
+			background: @btn-green-hover;
+			border-color: @btn-green-hover;
+		}
+	}
+	&.btn-error {
+		background: @btn-red;
+		border-color: @btn-red;
+		color: @white;
+		&:hover {
+			background: @btn-red-hover;
+			border-color: @btn-red-hover;
+		}
 	}
 }
 
@@ -56,10 +91,18 @@ header {
 				cursor: pointer;
 				margin: 0 10px;
 				padding: 10px;
+				a {
+					.transition();
+					color: @main-color;
+					text-decoration: none;
+				}
 				&:hover,
 				&.active {
 					background: @nav-hover;
 					color: @white;
+					a {
+						color: @white;
+					}
 				}
 			}
 		}
@@ -75,17 +118,8 @@ header {
 #signin-btn {
 	margin-right: 15px;
 	&::before {
-		color: @btn-dark;
 		content: '\f090';
-		font: normal 1em @font-FontAwesome;
 		margin-right: 5px;
-	}
-	&:hover {
-		background: @btn-dark;
-		color: @white;
-		&::before {
-			color: @white;
-		}
 	}
 }
 
@@ -96,7 +130,6 @@ header {
 	&::before {
 		color: @btn-green;
 		content: '\f234';
-		font: normal 1em @font-FontAwesome;
 		margin-right: 5px;
 	}
 	&:hover {
@@ -105,6 +138,13 @@ header {
 		&::before {
 			color: @white;
 		}
+	}
+}
+
+#signout-btn {
+	margin-left: 20px;
+	&::after {
+		content: '\f08b';
 	}
 }
 
@@ -123,6 +163,25 @@ header {
 	&.active {
 		opacity: 1;
 		visibility: visible;
+	}
+	&.centered {
+		left: 50%;
+		transform: translateX(-50%);
+	}
+	&.notification {
+		font: normal 1.2em/1 @font-OpenSans;
+		text-align: center;
+		.h {
+			display: block;
+			font: normal 1.8em/1 @font-OpenSans;
+		}
+		.message {
+			margin: 20px 0;
+		}
+		button {
+			text-transform: uppercase;
+			width: 100%;
+		}
 	}
 	form {
 		input {
@@ -146,17 +205,6 @@ header {
 		width: 100%;
 		&.active {
 			top: ~'calc(100% + 50px)';
-		}
-		form {
-			button {
-				background: @btn-green;
-				border-color: @btn-green;
-				color: @white;
-				&:hover {
-					background: @btn-green-hover;
-					border-color: @btn-green-hover;
-				}
-			}
 		}
 	}
 }
